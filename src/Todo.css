@@ -1,0 +1,155 @@
+:root {
+  --primary-color: #6E28AC;
+  --bg-color: #eeeeee;
+  --modal-bg-color: rgba(0, 0, 0, 0.2);
+  --cardModal-bg-color: #dddddd;
+  --text-color: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+.container {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.done {
+  text-decoration: line-through var(--primary-color);
+}
+
+form input {
+  padding: 15px;
+  border: none;
+}
+
+form button {
+  padding: 15px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-weight: bold;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.list {
+  list-style: none;
+  font-size: 26px;
+  font-weight: bold;
+  padding: 5px;
+  text-align: left;
+}
+
+.list button {
+  border: none;
+  background-color: var(--bg-color);
+  cursor: pointer;
+}
+
+.list button img {
+  width: 20px;
+}
+
+.btns {
+  width: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.item {
+  min-width: 400px;
+  padding: 15px;
+  margin: 15px;
+  border-radius: 2px;
+}
+
+.card {
+  display: flex;
+  padding: 20px;
+  box-shadow: 0 2px 7px 1px #6f28ac91;
+  justify-content: space-between;
+}
+
+header {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #8080802c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  color: var(--primary-color);
+  text-shadow: 2px 2px 5px var(--modal-bg-color);
+  font-size: 52px;
+}
+
+.addButton {
+  width: 50px;
+  height: 50px;
+  font-size: 36px;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.4s;
+
+}
+
+.addButton:hover {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--modal-bg-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardModal {
+  padding: 30px;
+  background-color: var(--cardModal-bg-color);
+}
+
+.hide {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 80%;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .item {
+    min-width: 200px;
+  }
+}
