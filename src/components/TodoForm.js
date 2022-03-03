@@ -1,18 +1,21 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import {addItem} from '../actions/listActions';
 
 function TodoForm(props) {
     const [text, setText] = useState("");
-
+    const dispatch = useDispatch()
     function handleText(e) {
         setText(e.target.value);
     }
 
-    function addItem(e) {
+    function addItemEvent(e) {
         e.preventDefault();
         if (text) {
-            props.onAddItem(text);
+            dispatch(addItem(text))
             setText("");
         }
+        props.onHideModal()
     }
 
     return (
@@ -24,7 +27,7 @@ function TodoForm(props) {
                 value={text}
                 placeholder="Nova Tarefa"
             />
-            <button onClick={addItem}>Add</button>
+            <button onClick={addItemEvent}>Add</button>
         </form>
     );
 }
